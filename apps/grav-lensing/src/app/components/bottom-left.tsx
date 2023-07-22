@@ -19,4 +19,5 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  flex-wrap: wrap;
 `

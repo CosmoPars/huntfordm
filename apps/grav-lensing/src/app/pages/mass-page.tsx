@@ -76,6 +76,7 @@ export const MassPage = () => {
   const [obstaclePos, setObstaclePos] = useState<number>(0)
   const [obstacleRadius, setObstacleRadius] = useState<number>(60)
   const [lineLength, setLineLength] = useState('50%')
+  const [isTablet,setIsTablet] = useState(false);
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Mass Bending Light'})
@@ -85,9 +86,12 @@ export const MassPage = () => {
   }, [history])
 
 
-
   const handleMassAdjust = useCallback((mass: number) => {
-    setObstacleRadius(60 + (mass * 20))
+    if(isTablet){
+      setObstacleRadius(53 + (mass * 8))
+    }else{
+      setObstacleRadius(60 + (mass * 20))
+    }
   }, [])
 
   const setAmbient = useAmbientFn()
@@ -105,6 +109,11 @@ export const MassPage = () => {
       setLineLength(`calc(${obstacleCentreCss[0]} - ${galaxyPosCss[0]} - ${Math.sqrt(Math.pow(50, 2) - Math.pow(offset, 2))}px)`)
     }
   }, [obstaclePos, obstacleRadius])
+
+  useEffect(() => {
+    setIsTablet(window.innerWidth <= 1080)
+    setObstacleRadius(53)
+  }, [])
 
   const draw = useCallback((size: [number, number], canvas: HTMLCanvasElement) => {
     const context = canvas.getContext('2d')
@@ -127,7 +136,6 @@ export const MassPage = () => {
 
   return (
     <Background imgSrc='/assets/img/gl-bg-1.jpg'>
-
       <Galaxy position={galaxyPosCss} />
       <ResponsiveCanvas id='LightBending' singleDraw={draw} />
       <Line start={galaxyPosCss} length={lineLength} rotation={0} lineColor={[255,255,0]} />
@@ -137,7 +145,7 @@ export const MassPage = () => {
         offset={obstaclePos}
         center={obstacleCentreCss}
         movementWidth={obstacleMovementWidth}
-        size = {50}
+        size = {isTablet ? 20 : 50}
         imageSrc='/assets/img/gl-obstacle.svg' />
       <TutorialHeader currentChapter={1} />
       <BottomLeft direction='column'>
@@ -166,7 +174,7 @@ export const MassPage = () => {
               textureAspect={1}
               textureScale = {0.25} // Shrink image down a bit to see more of galaxy
             />
-          <Obstacle center={['50%', '50%']} offset={obstaclePos} movementWidth={320} size = {50} imageSrc='/assets/img/gl-obstacle.svg' />
+          <Obstacle center={['50%', '50%']} offset={obstaclePos} movementWidth={320} size={isTablet ? 20 : 50} imageSrc='/assets/img/gl-obstacle.svg' />
 
         </Viewer>
       </BottomLeft>

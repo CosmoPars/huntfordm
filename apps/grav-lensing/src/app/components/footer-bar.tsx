@@ -15,4 +15,7 @@ export const FooterBar = styled.div<FooterBarProps>`
   flex-direction: row;
   justify-content: center;
   gap: 8em;
+  @media (max-width: 1080px){
+     gap: 1em;
+  }
 `

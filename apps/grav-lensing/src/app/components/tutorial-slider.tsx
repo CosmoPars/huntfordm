@@ -15,6 +15,18 @@ export type TutorialSliderProps = {
 type TutorialTextProp = {
   size?: string
 }
+
+const Layout = styled.div`
+ position: relative;
+ display: flex;
+ flex-direction: column;
+ width: 320px;
+ margin-left: 2em;
+ @media(max-width: 1080px){
+    padding-bottom: 14em;
+ }
+`
+
 const StyledText = styled.div`
   color: white;
   margin-left:1.2em;
@@ -39,7 +51,7 @@ export const TutorialSlider = ({
 }: TutorialSliderProps) => {
 
   return (
-    <div style={{ position: 'relative', display: 'flex', flexDirection: 'column', width: 320 ,marginLeft: '2em'}}>
+    <Layout>
       <Label style={{marginBottom: 40}} height={labelHeight} fontSize={labelFontSize}>
         {label}
       </Label>
@@ -47,6 +59,6 @@ export const TutorialSlider = ({
       <StyledText>
         <StyledH3 size = {tutorialTextSize}>{tutorialText}</StyledH3>
       </StyledText>
-    </div>
+    </Layout>
   )
 }

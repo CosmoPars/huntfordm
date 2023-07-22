@@ -14,7 +14,7 @@ export type ViewerProps = {
 const Layout = styled.div`
   display: flex;
   flex-direction: row;
-  gap: 20px;
+  flex-wrap: wrap;
 `
 
 const borderRadius = '0.3em'
@@ -28,6 +28,9 @@ const ViewBox = styled.div`
   position: relative;
   margin-left:2em;
   margin-bottom:2em;
+  @media (max-width: 1080px) {
+     margin-left: 0em;
+  }
 `
 
 const ViewBoxLabelPos = styled.div`
