@@ -167,7 +167,7 @@ export const GameView = ({cols, rows, difficulty}:GameViewProps) => {
       <BottomRight>
         {showEndScreen && <HelpButton />}
       </BottomRight>
-      <GameEndScreen open = {showEndScreen} onClose = {()=>setShowEndScreen(false)} isMore = {funding > 50000} back = {handleBack} replay = {handleReplay} gameLevel = {difficulty}>${funding.toLocaleString()}</GameEndScreen>
+      <GameEndScreen open = {showEndScreen} onClose = {()=>setShowEndScreen(false)} isMore = {funding > 50000} isLess = {funding < 0} back = {handleBack} replay = {handleReplay} gameLevel = {difficulty}>${funding.toLocaleString()}</GameEndScreen>
       {darkMatterRemaining >= 1 ? (<StackModal open = {!!displayScanResult} onClose = {()=>{setDisplayScanResult(undefined)}} scanResult={displayScanResult} position = {stackPos} boardSize = {[cols,rows]}/>):null}
     </GameViewContainer>
   )

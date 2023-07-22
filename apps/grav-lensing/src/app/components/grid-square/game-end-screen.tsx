@@ -7,6 +7,7 @@ import { NotificationPill } from '../notification-pill'
 type modalProp = {
     open:boolean
     isMore:boolean
+    isLess:boolean
     onClose:()=>void
     children:React.ReactNode
     back:()=>void
@@ -98,7 +99,7 @@ const Text = styled.p`
 
 `
 
-export const GameEndScreen = ({ open, isMore, children, onClose, back, replay, gameLevel }: modalProp) => {
+export const GameEndScreen = ({ open, isMore, isLess, children, onClose, back, replay, gameLevel }: modalProp) => {
 
   const [showUrlCopied, setShowUrlCopied] = useState(false)
 
@@ -126,6 +127,9 @@ export const GameEndScreen = ({ open, isMore, children, onClose, back, replay, g
       </div>
       {isMore===true?(
         <FooterText>Wow, you've got even more funding than when you started!</FooterText>
+      ):null}
+      {isLess===true?(
+        <FooterText>But, oh no! You ran out of funding.</FooterText>
       ):null}
       <ModalFooter>
         <BackButton onClick = {back}></BackButton>
