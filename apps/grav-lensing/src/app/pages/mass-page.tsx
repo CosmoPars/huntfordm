@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
+import { ModalDiv } from "../components/ModalDiv"
 import { Earth } from "../components/earth"
 import { Galaxy } from "../components/galaxy"
 import { Line } from "../components/line"
@@ -135,52 +136,55 @@ export const MassPage = () => {
   }, [obstaclePos, obstacleRadius])
 
   return (
-    <Background imgSrc='/assets/img/gl-bg-1.jpg'>
-      <Galaxy position={galaxyPosCss} />
-      <ResponsiveCanvas id='LightBending' singleDraw={draw} />
-      <Line start={galaxyPosCss} length={lineLength} rotation={0} lineColor={[255,255,0]} />
-      <Earth />
-      <Obstacle
-        showRing
-        offset={obstaclePos}
-        center={obstacleCentreCss}
-        movementWidth={obstacleMovementWidth}
-        size = {isTablet ? 20 : 50}
-        imageSrc='/assets/img/gl-obstacle.svg' />
-      <TutorialHeader currentChapter={1} />
-      <BottomLeft direction='column'>
-        <div style={{position: 'relative'}}>
-          <TutorialSlider
-          label="Obstacle Mass"
-          labelHeight={labelSize}
-          labelFontSize={labelFontSize}
-          tutorialText="Try changing the obstacle's mass"
-          onValueUpdated={handleMassAdjust}
-          initialValue={0}
-          sliderSound={ObstacleMass}
-        />
-        </div>
-        <Viewer
-          heading='Albert Einstein discovered an amazing thing!'
-          subheading='If the object is massive enough, its gravity can actually bend light.'
-          labelSize={labelSize}
-          labelFontSize={labelFontSize}
-        >
-          <GravitationalLensingSimulation
-              lensCenter={[0,0]} // Default centre is middle of canvas
-              lensOffset={[0,obstaclePos]}
-              lensMass={(obstacleRadius - 50) * 0.005}
-              textureSrc={'assets/img/gl-galaxy.png'}
-              textureAspect={1}
-              textureScale = {0.25} // Shrink image down a bit to see more of galaxy
+    <>
+        <Background imgSrc='/assets/img/gl-bg-1.jpg'>
+        <Galaxy position={galaxyPosCss} />
+        <ResponsiveCanvas id='LightBending' singleDraw={draw} />
+        <Line start={galaxyPosCss} length={lineLength} rotation={0} lineColor={[255,255,0]} />
+        <Earth />
+        <Obstacle
+            showRing
+            offset={obstaclePos}
+            center={obstacleCentreCss}
+            movementWidth={obstacleMovementWidth}
+            size = {isTablet ? 20 : 50}
+            imageSrc='/assets/img/gl-obstacle.svg' />
+        <TutorialHeader currentChapter={1} />
+        <BottomLeft direction='column'>
+            <div style={{position: 'relative'}}>
+            <TutorialSlider
+            label="Obstacle Mass"
+            labelHeight={labelSize}
+            labelFontSize={labelFontSize}
+            tutorialText="Try changing the obstacle's mass"
+            onValueUpdated={handleMassAdjust}
+            initialValue={0}
+            sliderSound={ObstacleMass}
             />
-          <Obstacle center={['50%', '50%']} offset={obstaclePos} movementWidth={320} size={isTablet ? 20 : 50} imageSrc='/assets/img/gl-obstacle.svg' />
+            </div>
+            <Viewer
+            heading='Albert Einstein discovered an amazing thing!'
+            subheading='If the object is massive enough, its gravity can actually bend light.'
+            labelSize={labelSize}
+            labelFontSize={labelFontSize}
+            >
+            <GravitationalLensingSimulation
+                lensCenter={[0,0]} // Default centre is middle of canvas
+                lensOffset={[0,obstaclePos]}
+                lensMass={(obstacleRadius - 50) * 0.005}
+                textureSrc={'assets/img/gl-galaxy.png'}
+                textureAspect={1}
+                textureScale = {0.25} // Shrink image down a bit to see more of galaxy
+                />
+            <Obstacle center={['50%', '50%']} offset={obstaclePos} movementWidth={320} size={isTablet ? 20 : 50} imageSrc='/assets/img/gl-obstacle.svg' />
 
-        </Viewer>
-      </BottomLeft>
-      <BottomRight>
-        <NextButton onClick={handleNext} />
-      </BottomRight>
-    </Background>
+            </Viewer>
+        </BottomLeft>
+        <BottomRight>
+            <NextButton onClick={handleNext} />
+        </BottomRight>
+        </Background>
+      {window.innerWidth < 1080 && <ModalDiv text={"Please open this app in landscape mode on tablet or use a desktop"}/>}
+    </>
   )
 }

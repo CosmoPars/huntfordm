@@ -3,7 +3,12 @@ import PrimaryButton from "../buttons/primary-button";
 import amplitude from 'amplitude-js';
 import { useHistory } from "react-router-dom";
 import { ClickSound } from "../../components/audio/sound"
+import styled from "@emotion/styled"
 
+const VideoPlayer = styled.video`
+    max-width: 100vw;
+    object-fit: cover;
+`
 
 const UseRefPlayer = () => {
   const videoRef = useRef();
@@ -52,9 +57,9 @@ const UseRefPlayer = () => {
               Start Stack
             </button>
             {/* </div> */}
-      <video id="myVideo" autoPlay playsInline ref={videoRef} style={{ position: "fixed", top:'0', left:'0', width:'100%', height:'100vh', objectFit: "cover" }}>
-          <source src="/assets/video/Zeroth.mp4" type="video/mp4" />    
-      </video>
+          <VideoPlayer id="myVideo" autoPlay playsInline ref={videoRef}>
+            <source src="/assets/video/Zeroth.mp4" type="video/mp4" />    
+        </VideoPlayer>
       </div>
     </>
   );

@@ -82,8 +82,6 @@ export const StackedGalaxiesLoaderPage = () => {
     <Background imgSrc='/assets/img/stackingstill.png'>
        <UseRefPlayer/>
       <TutorialHeader currentChapter={3} />
-      <BottomCenter width='70%'>
-      </BottomCenter>
       <BottomRight>
         <NextButton onClick={handleNext} />
       </BottomRight>

@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react"
 import { useHistory } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
+import { ModalDiv } from "../components/ModalDiv"
 import { Earth } from "../components/earth"
 import { Galaxy } from "../components/galaxy"
 import { Line } from "../components/line"
@@ -55,35 +56,38 @@ export const ObstaclePage = () => {
   }, [obstaclePos])
 
   return (
-    <Background imgSrc='/assets/img/gl-bg-1.jpg' draggable = 'false'>
-      <Galaxy position={galaxyPos} />
-      {lineRotations.map((rotation) => <Line key={rotation} start={galaxyPos} length='200px' rotation={rotation} />)}
-      <Line start={galaxyPos} length={lineLength} rotation={0} lineColor={[255,255,0]} />
-      <Earth />
-      <Obstacle
-        showRing
-        offset={obstaclePos}
-        center={obstacleCentre}
-        movementWidth={obstacleMovementWidth}
-        size={obstacleRadius}
-        imageSrc='/assets/img/gl-obstacle.svg' />
-      <Slider center={obstacleCentre} width={350}  axis='y' onValueUpdated={setObstaclePos} sliderSound={MoveObstacle} railThickness={0} />
-      <TutorialHeader currentChapter={1} />
-      <BottomLeft>
-        <Viewer
-          heading='Unless something gets in the way.'
-          subheading='Try moving the obstacle.'
-          labelSize={labelSize}
-          labelFontSize={labelFontSize}
-        >
-          <Galaxy position={['50%', '50%']} scale={0.4} />
-          <Obstacle center={['50%', '50%']} offset={obstaclePos} movementWidth={320} size={obstacleRadius} imageSrc='/assets/img/gl-obstacle.svg' />
-        </Viewer>
-      </BottomLeft>
-      <BottomRight>
-        <NextButton onClick={handleNext} />
-      </BottomRight>
-    </Background>
+    <>
+        <Background imgSrc='/assets/img/gl-bg-1.jpg' draggable = 'false'>
+        <Galaxy position={galaxyPos} />
+        {lineRotations.map((rotation) => <Line key={rotation} start={galaxyPos} length='200px' rotation={rotation} />)}
+        <Line start={galaxyPos} length={lineLength} rotation={0} lineColor={[255,255,0]} />
+        <Earth />
+        <Obstacle
+            showRing
+            offset={obstaclePos}
+            center={obstacleCentre}
+            movementWidth={obstacleMovementWidth}
+            size={obstacleRadius}
+            imageSrc='/assets/img/gl-obstacle.svg' />
+        <Slider center={obstacleCentre} width={350}  axis='y' onValueUpdated={setObstaclePos} sliderSound={MoveObstacle} railThickness={0} />
+        <TutorialHeader currentChapter={1} />
+        <BottomLeft>
+            <Viewer
+            heading='Unless something gets in the way.'
+            subheading='Try moving the obstacle.'
+            labelSize={labelSize}
+            labelFontSize={labelFontSize}
+            >
+            <Galaxy position={['50%', '50%']} scale={0.4} />
+            <Obstacle center={['50%', '50%']} offset={obstaclePos} movementWidth={320} size={obstacleRadius} imageSrc='/assets/img/gl-obstacle.svg' />
+            </Viewer>
+        </BottomLeft>
+        <BottomRight>
+            <NextButton onClick={handleNext} />
+        </BottomRight>
+        </Background>
+        {window.innerWidth < 1080 && <ModalDiv text={"Please open this app in landscape mode on tablet or use a desktop"}/>}
+    </>
   )
 
 

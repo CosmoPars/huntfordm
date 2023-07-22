@@ -70,21 +70,19 @@ export const StackedGalaxiesPage3 = () => {
     setAmbient(TutorialAmbience, 3000)
   }, [setAmbient])
 
-
+  const isTablet = window.innerWidth <= 1080;
 
   return (
-
-
     <Background imgSrc='/assets/img/stackingstill4.png'>
       <UseRefPlayer/>
       <TutorialHeader currentChapter={3} />
       <BottomCenter width='70%'>
       </BottomCenter>
-      <BottomRight>
+      <BottomRight style={{flexDirection: isTablet ? "column" : "row"}}>
         <StackRestartButton onClick={handleRestack} /> 
         <NextButton onClick={handleNext} />
        </BottomRight>
-      <BottomLeft>
+      <BottomLeft style={{width: isTablet ? "50%" : "70%"}}>
         <TutorialText heading={'The stacked images reveal something new. Some hidden dark matter!'} subheading={'Galaxy images are squashed in the direction of a lens and stretched crosswise. Without lensing, the stacks would just be circles.'}/>
        </BottomLeft>
     </Background>

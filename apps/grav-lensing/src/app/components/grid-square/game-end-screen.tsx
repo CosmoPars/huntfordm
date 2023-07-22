@@ -65,8 +65,8 @@ const ModalDiv = styled.div`
     text-align:center;
     font-size:40px;
     font-weight:600;
-
 `
+
 const ModalFooter = styled.div`
     position: fixed;
     top: 75%;
