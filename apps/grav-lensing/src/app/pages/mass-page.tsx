@@ -184,7 +184,7 @@ export const MassPage = () => {
             <NextButton onClick={handleNext} />
         </BottomRight>
         </Background>
-      {window.innerWidth < 1080 && <ModalDiv text={"Please open this app in landscape mode on tablet or use a desktop"}/>}
+        <ModalDiv text={"Please open this app full screen in landscape mode."}/>
     </>
   )
 }
