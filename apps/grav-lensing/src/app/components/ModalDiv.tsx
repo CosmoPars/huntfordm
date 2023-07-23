@@ -34,17 +34,18 @@ const TextDiv = styled.div`
 `;
 
 export const ModalDiv = ({ text }: { text: string }) => {
-  let [showModal, setShowModal] = useState(true);
+  let [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     function handleResize() {
-      if (window.innerWidth < 1080) {
+      if (window.innerWidth < 1080 && window.innerWidth != 0) {
         setShowModal(true);
       } else {
         setShowModal(false);
       }
     }
     window.addEventListener("resize", handleResize);
+    handleResize()
   }, []);
   return (
     <>
