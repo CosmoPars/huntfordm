@@ -409,4 +409,4 @@ void main(void) {
   v_color = lchToRgb(65.0, 50.0, phase_degs, 0.5 * magnification);
   gl_Position = u_projection * u_modelview * vec4(position, 0.0, 1.0);
 }
-`
+`;

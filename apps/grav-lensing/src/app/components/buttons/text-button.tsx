@@ -1,9 +1,9 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export type TextButtonProps = {
-  onClick?: () => void
-  children: React.ReactNode
-}
+  onClick?: () => void;
+  children: React.ReactNode;
+};
 
 const ButtonPlain = styled.div`
   height: 2em;
@@ -18,17 +18,10 @@ const ButtonPlain = styled.div`
   padding: 0.1em 0.75em;
   color: white;
   text-transform: uppercase;
-`
+`;
 
-export const TextButton = ({
-  onClick,
-  children
-}: TextButtonProps) => {
-  return (
-    <ButtonPlain onClick={onClick}>
-      {children}
-    </ButtonPlain>
-  )
-}
+export const TextButton = ({ onClick, children }: TextButtonProps) => {
+  return <ButtonPlain onClick={onClick}>{children}</ButtonPlain>;
+};
 
-export default TextButton
+export default TextButton;

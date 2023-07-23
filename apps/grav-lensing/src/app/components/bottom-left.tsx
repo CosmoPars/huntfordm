@@ -1,8 +1,8 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export type BottomLeftProps = {
-  direction?: 'row' | 'column'
-}
+  direction?: "row" | "column";
+};
 
 export const BottomLeft = styled.div<BottomLeftProps>`
   position: absolute;
@@ -10,9 +10,9 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   left: 0;
   padding-bottom: 1em;
   padding-left: 1em;
-  margin:2em;
+  margin: 2em;
   display: flex;
-  flex-direction: ${props => props.direction || 'row'};
+  flex-direction: ${(props) => props.direction || "row"};
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -20,4 +20,4 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   -ms-user-select: none;
   user-select: none;
   flex-wrap: wrap;
-`
+`;

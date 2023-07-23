@@ -1,1 +1,1 @@
-export * from './lib/responsive-canvas'
+export * from "./lib/responsive-canvas";

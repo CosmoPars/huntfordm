@@ -1,11 +1,10 @@
 import React, { useCallback, useRef } from "react";
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 const VideoPlayer = styled.video`
-    max-width: 100vw;
-    object-fit: cover;
-`
-
+  max-width: 100vw;
+  object-fit: cover;
+`;
 
 const UseRefPlayer = () => {
   const videoRef = useRef();
@@ -17,7 +16,7 @@ const UseRefPlayer = () => {
   return (
     <>
       <div>
-            {/* <button 
+        {/* <button 
               style={{
                   color: 'red', 
                   position: "fixed", 
@@ -38,9 +37,9 @@ const UseRefPlayer = () => {
               onClick={handlePlay}>
               Stack the Rest
             </button> */}
-          <VideoPlayer id="myVideo" autoPlay playsInline ref={videoRef}>
+        <VideoPlayer id="myVideo" autoPlay playsInline ref={videoRef}>
           <source src="../../assets/video/Third.mp4" type="video/mp4" />
-      </VideoPlayer>
+        </VideoPlayer>
       </div>
     </>
   );

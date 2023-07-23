@@ -1,7 +1,6 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
-export type EarthProps = {
-}
+export type EarthProps = {};
 
 const GalaxyDisplay = styled.img<EarthProps>`
   position: absolute;
@@ -14,10 +13,14 @@ const GalaxyDisplay = styled.img<EarthProps>`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-`
+`;
 
 export const Earth = () => {
   return (
-    <GalaxyDisplay src='assets/img/gl-earth.png' alt='Earth' draggable='false'/>
-  )
-}
+    <GalaxyDisplay
+      src="assets/img/gl-earth.png"
+      alt="Earth"
+      draggable="false"
+    />
+  );
+};

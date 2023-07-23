@@ -1,1 +1,1 @@
-export * from './lib/webgl-utils-shader'
+export * from "./lib/webgl-utils-shader";

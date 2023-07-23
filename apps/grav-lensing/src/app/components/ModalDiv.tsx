@@ -53,13 +53,21 @@ export const ModalDiv = ({ text }: { text: string }) => {
           <FadedDiv />
 
           <TextDiv>
-              <button
-                style={{ color: "red", border: "0px", background: "black", scale:"2", position: "absolute", top: "30px", right: "30px" }}
-                onClick={() => setShowModal(false)}
-              >
-                X
-              </button>
-              <p>{text}</p>
+            <button
+              style={{
+                color: "red",
+                border: "0px",
+                background: "black",
+                scale: "2",
+                position: "absolute",
+                top: "30px",
+                right: "30px",
+              }}
+              onClick={() => setShowModal(false)}
+            >
+              X
+            </button>
+            <p>{text}</p>
           </TextDiv>
         </>
       )}
