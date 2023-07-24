@@ -22,6 +22,7 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   flex-wrap: wrap;
   @media (max-width: 1360px) {
     padding-bottom: 0em;
+    width: 50%;
     padding-right: 5em;
   }
   @media (max-width: 810px) {

@@ -14,4 +14,7 @@ export const BottomRight = styled.div`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  @media (max-width: 1360px) {
+    width: 30%;
+  }
 `;
