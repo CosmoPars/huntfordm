@@ -86,18 +86,16 @@ export const StackedGalaxiesPage3 = () => {
     setAmbient(TutorialAmbience, 3000);
   }, [setAmbient]);
 
-  const isTablet = window.innerWidth <= 1080;
-
   return (
     <Background imgSrc="/assets/img/stackingstill4.png">
       <UseRefPlayer />
       <TutorialHeader currentChapter={3} />
       <BottomCenter width="70%"></BottomCenter>
-      <BottomRight style={{ flexDirection: isTablet ? "column" : "row" }}>
+      <BottomRight>
         <StackRestartButton onClick={handleRestack} />
         <NextButton onClick={handleNext} />
       </BottomRight>
-      <BottomLeft style={{ width: isTablet ? "50%" : "70%" }}>
+      <BottomLeft>
         <TutorialText
           heading={
             "The stacked images reveal something new. Some hidden dark matter!"

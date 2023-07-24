@@ -16,5 +16,6 @@ export const BottomRight = styled.div`
   user-select: none;
   @media (max-width: 1360px) {
     width: 30%;
+    flex-direction: column;
   }
 `;
