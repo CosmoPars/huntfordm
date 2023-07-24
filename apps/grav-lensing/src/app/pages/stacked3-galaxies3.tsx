@@ -64,11 +64,9 @@ export const StackedGalaxiesPage3 = () => {
   }, [history]);
 
   const handleRestack = useCallback(() => {
-    amplitude
-      .getInstance()
-      .logEvent("Click on Restack Button", {
-        CurrentPage: "Stacked Galaxies3",
-      });
+    amplitude.getInstance().logEvent("Click on Restack Button", {
+      CurrentPage: "Stacked Galaxies3",
+    });
     history.push("/tutorial/stackedgalaxiesloader");
     ClickSound.play();
   }, [history]);

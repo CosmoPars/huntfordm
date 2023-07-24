@@ -39,7 +39,9 @@ export const DarkMatterPage = () => {
       <TutorialHeader currentChapter={2} />
       <BottomCenter width="70%">
         <TutStyledText>
-          If we could turn on "dark matter vision" and see the invisible mass this is what we expect the universe to look like. Galaxies live in this giant cosmic web.
+          If we could turn on "dark matter vision" and see the invisible mass
+          this is what we expect the universe to look like. Galaxies live in
+          this giant cosmic web.
         </TutStyledText>
       </BottomCenter>
       <BottomLeft>

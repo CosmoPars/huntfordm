@@ -33,11 +33,9 @@ export const ObstaclePage = () => {
   const [lineLength, setLineLength] = useState("50%");
 
   const handleNext = useCallback(() => {
-    amplitude
-      .getInstance()
-      .logEvent("Click on Next Button", {
-        CurrentPage: "Obstacle Blocks Light",
-      });
+    amplitude.getInstance().logEvent("Click on Next Button", {
+      CurrentPage: "Obstacle Blocks Light",
+    });
     history.push("/tutorial/mass");
     ClickSound.play();
     MoveObstacle.stop();

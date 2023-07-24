@@ -45,7 +45,7 @@ export const ModalDiv = ({ text }: { text: string }) => {
       }
     }
     window.addEventListener("resize", handleResize);
-    handleResize()
+    handleResize();
   }, []);
   return (
     <>
