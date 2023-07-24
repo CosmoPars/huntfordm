@@ -13,6 +13,7 @@ const TextLayout = styled.div`
   color: white;
   width: 725px;
   margin-left: 1.2em;
+  flex-wrap: wrap;
 `;
 const HeaderText = styled.div`
   font-size: 2.2em;

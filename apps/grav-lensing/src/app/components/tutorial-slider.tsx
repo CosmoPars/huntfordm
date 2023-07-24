@@ -22,8 +22,10 @@ const Layout = styled.div`
   flex-direction: column;
   width: 320px;
   margin-left: 2em;
-  @media (max-width: 1080px) {
-    padding-bottom: 14em;
+  @media (max-width: 1360px){
+    position: fixed;
+    left: 0;
+    top: 7em;
   }
 `;
 
