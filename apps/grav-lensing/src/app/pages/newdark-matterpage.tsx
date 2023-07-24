@@ -39,8 +39,7 @@ export const NewDarkMatterPage = () => {
       <TutorialHeader currentChapter={2} />
       <CenterCenter width="70%">
         <TutStyledText>
-          80% of the mass in the Universe is made of
-          <br /> invisible stuff called "dark matter"
+          80% of the mass in the Universe is made of invisible stuff called "dark matter"
         </TutStyledText>
       </CenterCenter>
       <BottomLeft></BottomLeft>

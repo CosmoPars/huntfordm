@@ -45,7 +45,16 @@ export const InteractiveLensPage = () => {
   >([0, 0]);
   const [darkmatterMass, setDarkMatterMass] = useState<number>(0.005);
   const backgroundRef = useRef<HTMLDivElement>(null);
+  const [sliderTop,setSliderTop] = useState<boolean>(false)
 
+  const handleResize = () => {
+      if (window.innerWidth <= 1080 && window.innerWidth != 0) {
+        setSliderTop(true);
+      } else {
+        setSliderTop(false);
+      }
+  }
+  
   const handleNext = useCallback(() => {
     amplitude
       .getInstance()
@@ -58,6 +67,8 @@ export const InteractiveLensPage = () => {
 
   useEffect(() => {
     setAmbient(TutorialAmbience, 3000);
+    window.addEventListener('resize',handleResize);
+    handleResize()
   }, [setAmbient]);
 
   const handlePositionUpdate = useCallback((pos: [number, number]) => {
@@ -73,8 +84,20 @@ export const InteractiveLensPage = () => {
     setDarkMatterMass((mass + 0.5) * 0.01);
   }, []);
 
+  console.log(sliderTop,window.innerWidth <= 1080 && window.innerWidth != 0)
   return (
     <Background ref={backgroundRef} imgSrc="/assets/img/gl-bg-1.jpg">
+      <div style={{position: "absolute", top: 80,left: 0}}>
+        {sliderTop && <TutorialSlider
+            label="Obstacle Mass"
+            labelHeight={labelSize}
+            labelFontSize={labelFontSize}
+            tutorialText="Try changing the obstacle's mass"
+            onValueUpdated={handleMassAdjust}
+            initialValue={0}
+            sliderSound={ObstacleMass}
+        />}
+      </div>
       <GravitationalLensingSimulation
         lensCenter={darkMatterCentreWebGl}
         lensOffset={darkMatterPosOffset}
@@ -91,7 +114,7 @@ export const InteractiveLensPage = () => {
       />
       <TutorialHeader currentChapter={2} />
       <BottomLeft style={{ gap: "20px" }}>
-        <TutorialSlider
+        {!sliderTop && <TutorialSlider
           label="Obstacle Mass"
           labelHeight={labelSize}
           labelFontSize={labelFontSize}
@@ -99,7 +122,7 @@ export const InteractiveLensPage = () => {
           onValueUpdated={handleMassAdjust}
           initialValue={0}
           sliderSound={ObstacleMass}
-        />
+        />}
         <TutorialText
           heading={tutorialTextHeading}
           subheading={tutorialTextSubheading}

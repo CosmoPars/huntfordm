@@ -54,9 +54,7 @@ export const StrangeGalaxiesPage = () => {
       </Magnify>
       <BottomCenter width="70%">
         <TutStyledText>
-          Strong lensing, that obvious, is rare,
-          <br />
-          but a weak lensing distortion exists almost everywhere.
+          Strong lensing, that obvious, is rare, but a weak lensing distortion exists almost everywhere.
         </TutStyledText>
       </BottomCenter>
       <BottomRight>

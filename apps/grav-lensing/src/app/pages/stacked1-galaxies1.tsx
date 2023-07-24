@@ -10,6 +10,7 @@ import { AnimatedStack } from "../components/stack/animated-stack";
 import { Stack } from "../components/stack/stack";
 import { MagnifyViewer } from "../components/magnify-viewer";
 import { MagnifyClip } from "../components/magnify-clip";
+import { ModalDiv } from "../components/ModalDiv";
 import { TopLeft } from "../components/top-left";
 import { Label } from "../components/label";
 import { labelSize, labelFontSize, stackLayers } from "../config";
@@ -73,6 +74,7 @@ export const StackedGalaxiesPage1 = () => {
           }
         />
       </BottomLeft>
+      <ModalDiv text={"Please open this app full screen in landscape mode."} />
     </Background>
   );
 };

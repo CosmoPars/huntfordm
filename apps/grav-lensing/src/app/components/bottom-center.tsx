@@ -14,4 +14,7 @@ export const BottomCenter = styled.div<BottomCenterProps>`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media (max-width: 1080px) {
+    padding-bottom: 5em;
+  }
 `;

@@ -6,6 +6,7 @@ import { TutorialHeader } from "../components/tutorial-header";
 import { BottomCenter } from "../components/bottom-center";
 import { NextButton } from "../components/buttons/next-button";
 import { Magnify } from "../components/magnify";
+import { ModalDiv } from "../components/ModalDiv";
 import { AnimatedStack } from "../components/stack/animated-stack";
 import { Stack } from "../components/stack/stack";
 import { MagnifyViewer } from "../components/magnify-viewer";
@@ -92,6 +93,7 @@ export const StackedGalaxiesPage2 = () => {
           }
         />
       </BottomLeft>
+      <ModalDiv text={"Please open this app full screen in landscape mode."} />
     </Background>
   );
 };
