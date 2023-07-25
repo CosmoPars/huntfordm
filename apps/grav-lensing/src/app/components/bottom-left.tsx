@@ -21,8 +21,8 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   user-select: none;
   flex-wrap: wrap;
   @media (max-width: 1660px) {
-    padding-bottom: 7em;
-    width: 50%;
+    padding-bottom: 4em;
+    width: 60%;
     padding-right: 5em;
   }
 `;

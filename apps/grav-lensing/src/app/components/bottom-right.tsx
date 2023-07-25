@@ -15,7 +15,10 @@ export const BottomRight = styled.div`
   -ms-user-select: none;
   user-select: none;
   @media (max-width: 1360px) {
-    width: 30%;
+    width: 25%;
+    scale: 0.7;
+    padding-bottom: 2em;
+    padding-right: 2em;
     flex-direction: column;
   }
 `;
