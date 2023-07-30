@@ -20,7 +20,7 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   -ms-user-select: none;
   user-select: none;
   flex-wrap: wrap;
-  @media (max-width: 1660px) {
+  @media (max-width: 1060px) {
     padding-bottom: 4em;
     width: 60%;
     padding-right: 5em;
