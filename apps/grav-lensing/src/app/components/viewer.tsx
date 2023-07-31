@@ -30,6 +30,8 @@ const ViewBox = styled.div`
   margin-bottom: 2em;
   @media (max-width: 1080px) {
     margin-left: 0em;
+    width: 250px;
+    height: 150px;
   }
 `;
 

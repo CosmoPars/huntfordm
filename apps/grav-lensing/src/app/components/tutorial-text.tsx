@@ -14,7 +14,7 @@ const TextLayout = styled.div`
   width: 725px;
   margin-left: 1.2em;
   flex-wrap: wrap;
-  @media (max-width: 900px) {
+  @media (max-width: 1080px) {
      font-size: 0.7em;
   }
 `;
