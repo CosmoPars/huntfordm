@@ -20,9 +20,11 @@ export const BottomLeft = styled.div<BottomLeftProps>`
   -ms-user-select: none;
   user-select: none;
   flex-wrap: wrap;
-  @media (max-width: 1060px) {
-    padding-bottom: 4em;
+  @media (max-width: 900px) {
     width: 60%;
     padding-right: 5em;
+  }
+  @media (max-width: 700px) {
+    padding-bottom: 3em;
   }
 `;

@@ -143,9 +143,7 @@ export const TitlePage = () => {
           alt="Centre-national Logo"
         />
       </FooterBar>
-      <BottomRight>
-        <HelpButton />
-      </BottomRight>
+      <HelpButton />
     </Background>
   );
 };
