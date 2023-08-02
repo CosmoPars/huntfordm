@@ -108,9 +108,7 @@ export const GameStartPage = () => {
         </ButtonPosition>
       </ContainerDiv>
       <BottomCenter width="70%"></BottomCenter>
-      <BottomRight>
-        <HelpButton />
-      </BottomRight>
+      <HelpButton />
     </Background>
   );
 };
