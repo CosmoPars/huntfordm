@@ -17,6 +17,9 @@ const TextLayout = styled.div`
   @media (max-width: 1080px) {
      font-size: 0.7em;
   }
+  @media (max-height: 800px) {
+     font-size: 0.6em;
+  }
 `;
 const HeaderText = styled.div`
   font-size: 2.2em;

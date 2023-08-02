@@ -28,7 +28,12 @@ const ViewBox = styled.div`
   position: relative;
   margin-left: 2em;
   margin-bottom: 2em;
-  @media (max-width: 1080px) {
+  @media (max-width: 1600px) {
+    margin-left: 0em;
+    width: 250px;
+    height: 150px;
+  }
+  @media (max-height: 800px) {
     margin-left: 0em;
     width: 250px;
     height: 150px;
