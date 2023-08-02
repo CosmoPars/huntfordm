@@ -137,7 +137,7 @@ export const MassPage = () => {
   }, [obstaclePos, obstacleRadius]);
 
   useEffect(() => {
-    setIsTablet(window.innerWidth <= 1080);
+    window.addEventListener('resize',() => {setIsTablet(window.innerWidth <= 1080)});
     setObstacleRadius(53);
   }, []);
 
