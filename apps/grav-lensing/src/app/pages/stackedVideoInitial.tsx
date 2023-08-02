@@ -101,7 +101,7 @@ export const StackedGalaxiesLoaderPage = () => {
           }
         />
       </BottomLeft>
-      <ModalDiv text={"Please open this app full screen in landscape mode."} />
+      <ModalDiv text={"Please open this app in full screen or landscape mode."} />
     </Background>
   );
 };
