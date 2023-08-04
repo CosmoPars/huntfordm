@@ -6,7 +6,7 @@ import { ClickSound } from "../../components/audio/sound";
 import styled from "@emotion/styled";
 
 const VideoPlayer = styled.video`
-  max-width: 100vw;
+  width: 100vw;
 `;
 
 const UseRefPlayer = () => {

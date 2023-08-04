@@ -88,7 +88,7 @@ export const StackedGalaxiesLoaderPage = () => {
   }, [setAmbient]);
 
   return (
-    <Background imgSrc="/assets/img/stackingstill.png">
+    <Background imgSrc="/assets/img/gl-bg-1.jpg">
       <UseRefPlayer />
       <TutorialHeader currentChapter={3} />
       <BottomCenter width='70%'>
