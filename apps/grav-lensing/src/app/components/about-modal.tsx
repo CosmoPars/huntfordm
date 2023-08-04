@@ -26,6 +26,9 @@ const ModalContainer = styled.div`
   padding: 25px 40px;
   border-radius: 1.5em;
   box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4);
+  @media (max-width: 1080px) {
+     font-size: 0.8em;
+  }
 `;
 
 const ModalHeader = styled.div`
