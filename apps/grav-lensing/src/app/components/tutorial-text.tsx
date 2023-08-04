@@ -17,7 +17,7 @@ const TextLayout = styled.div`
   @media (max-width: 1080px) {
      font-size: 0.7em;
   }
-  @media (max-height: 800px) {
+  @media (max-height: 600px) {
      font-size: 0.6em;
   }
 `;

@@ -7,7 +7,6 @@ import styled from "@emotion/styled";
 
 const VideoPlayer = styled.video`
   max-width: 100vw;
-  object-fit: cover;
 `;
 
 const UseRefPlayer = () => {
@@ -29,7 +28,7 @@ const UseRefPlayer = () => {
 
   return (
     <>
-      <div>
+        <div style={{ overflow: "hidden", maxHeight: "100vh" }}>
         {/* <div id="box" style={{visibility:"hidden"}}> */}
         <button
           style={{
