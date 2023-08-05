@@ -15,18 +15,17 @@ const FadedDiv = styled.div`
 const TextDiv = styled.div`
   z-index: 101;
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 500px;
-  transform: translate(-50%, -50%);
-  background: #000;
-  padding: 25px;
-  zindex: 1000;
+  top: 5%;
+  left: 20%;
+  width: 550px;
+  background: black;
+  opacity: 0.8;
   color: yellow;
   border: 1px solid yellow;
   border-radius: 10px;
   text-align: center;
-  font-size: 40px;
+  padding: 5px;
+  font-size: 20px;
   font-weight: 600;
   text-align: right;
   flex-direction: row;
@@ -51,17 +50,15 @@ export const ModalDiv = ({ text }: { text: string }) => {
     <>
       {showModal && (
         <>
-          <FadedDiv />
-
           <TextDiv>
             <button
               style={{
                 color: "red",
                 border: "0px",
-                background: "black",
+                background: "rgba(0,0,0,0)",
                 scale: "2",
                 position: "absolute",
-                top: "30px",
+                top: "8px",
                 right: "30px",
               }}
               onClick={() => setShowModal(false)}
