@@ -96,9 +96,9 @@ const strokeLine = (
 export const MassPage = () => {
   const history = useHistory();
   const [obstaclePos, setObstaclePos] = useState<number>(0);
+  const [isTablet, setIsTablet] = useState(false);
   const [obstacleRadius, setObstacleRadius] = useState<number>(60);
   const [lineLength, setLineLength] = useState("50%");
-  const [isTablet, setIsTablet] = useState(false);
 
   const handleNext = useCallback(() => {
     amplitude
@@ -111,7 +111,9 @@ export const MassPage = () => {
 
   const handleMassAdjust = useCallback((mass: number) => {
     if (isTablet) {
-      setObstacleRadius(53 + mass * 8);
+      console.log(obstacleRadius)
+      setObstacleRadius(60 + mass * 20);
+      console.log(obstacleRadius)
     } else {
       setObstacleRadius(60 + mass * 20);
     }
@@ -138,7 +140,8 @@ export const MassPage = () => {
 
   useEffect(() => {
     window.addEventListener('resize',() => {setIsTablet(window.innerWidth <= 1080)});
-    setObstacleRadius(53);
+    setIsTablet(window.innerWidth <= 1080);
+    setObstacleRadius(isTablet ? 53 : 60);
   }, []);
 
   const draw = useCallback(
