@@ -61,20 +61,24 @@ export const StackedGalaxiesPage1 = () => {
 
   return (
     <Background imgSrc="/assets/img/gl-bg-1.jpg">
-      <UseRefPlayer />
-      <TutorialHeader currentChapter={3} />
-      <BottomCenter width="70%"></BottomCenter>
-      <BottomRight>
-        <NextButton onClick={handleNext} />
-      </BottomRight>
-      <BottomLeft>
-        <TutorialText
-          heading={
-            'But what if we combine ("stack") all the galaxy images in one patch of the sky?'
-          }
+      <Background imgSrc="/assets/img/stackingstill2.png">
+        <UseRefPlayer />
+        <TutorialHeader currentChapter={3} />
+        <BottomCenter width="70%"></BottomCenter>
+        <BottomRight>
+          <NextButton onClick={handleNext} />
+        </BottomRight>
+        <BottomLeft>
+          <TutorialText
+            heading={
+              'But what if we combine ("stack") all the galaxy images in one patch of the sky?'
+            }
+          />
+        </BottomLeft>
+        <ModalDiv
+          text={"Please open this app in full screen or landscape mode."}
         />
-      </BottomLeft>
-      <ModalDiv text={"Please open this app in full screen or landscape mode."} />
+      </Background>
     </Background>
   );
 };

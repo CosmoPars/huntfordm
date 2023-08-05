@@ -80,20 +80,24 @@ export const StackedGalaxiesPage2 = () => {
 
   return (
     <Background imgSrc="/assets/img/gl-bg-1.jpg">
-      <UseRefPlayer />
-      <TutorialHeader currentChapter={3} />
-      <BottomCenter width="70%"></BottomCenter>
-      <BottomRight>
-        <NextButton onClick={handleNext} />
-      </BottomRight>
-      <BottomLeft>
-        <TutorialText
-          heading={
-            'The intrinsic galaxy shapes "average out", but the lensing effect doesn\'t.'
-          }
+      <Background imgSrc="/assets/img/stackingstill3">
+        <UseRefPlayer />
+        <TutorialHeader currentChapter={3} />
+        <BottomCenter width="70%"></BottomCenter>
+        <BottomRight>
+          <NextButton onClick={handleNext} />
+        </BottomRight>
+        <BottomLeft>
+          <TutorialText
+            heading={
+              'The intrinsic galaxy shapes "average out", but the lensing effect doesn\'t.'
+            }
+          />
+        </BottomLeft>
+        <ModalDiv
+          text={"Please open this app in full screen or landscape mode."}
         />
-      </BottomLeft>
-      <ModalDiv text={"Please open this app in full screen or landscape mode."} />
+      </Background>
     </Background>
   );
 };

@@ -88,24 +88,28 @@ export const StackedGalaxiesPage3 = () => {
 
   return (
     <Background imgSrc="/assets/img/gl-bg-1.jpg">
-      <UseRefPlayer />
-      <TutorialHeader currentChapter={3} />
-      <BottomCenter width="70%"></BottomCenter>
-      <BottomRight>
-        <StackRestartButton onClick={handleRestack} />
-        <NextButton onClick={handleNext} />
-      </BottomRight>
-      <BottomLeft>
-        <TutorialText
-          heading={
-            "The stacked images reveal something new. Some hidden dark matter!"
-          }
-          subheading={
-            "Galaxy images are squashed in the direction of a lens and stretched crosswise. Without lensing, the stacks would just be circles."
-          }
+      <Background imgSrc="/assets/img/stackingstill4">
+        <UseRefPlayer />
+        <TutorialHeader currentChapter={3} />
+        <BottomCenter width="70%"></BottomCenter>
+        <BottomRight>
+          <StackRestartButton onClick={handleRestack} />
+          <NextButton onClick={handleNext} />
+        </BottomRight>
+        <BottomLeft>
+          <TutorialText
+            heading={
+              "The stacked images reveal something new. Some hidden dark matter!"
+            }
+            subheading={
+              "Galaxy images are squashed in the direction of a lens and stretched crosswise. Without lensing, the stacks would just be circles."
+            }
+          />
+        </BottomLeft>
+        <ModalDiv
+          text={"Please open this app in full screen or landscape mode."}
         />
-      </BottomLeft>
-      <ModalDiv text={"Please open this app in full screen or landscape mode."} />
+      </Background>
     </Background>
   );
 };

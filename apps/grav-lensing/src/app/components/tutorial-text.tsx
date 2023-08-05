@@ -15,10 +15,10 @@ const TextLayout = styled.div`
   margin-left: 1.2em;
   flex-wrap: wrap;
   @media (max-width: 1080px) {
-     font-size: 0.7em;
+    font-size: 0.7em;
   }
   @media (max-height: 600px) {
-     font-size: 0.6em;
+    font-size: 0.6em;
   }
 `;
 const HeaderText = styled.div`

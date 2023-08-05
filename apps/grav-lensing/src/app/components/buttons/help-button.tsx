@@ -22,7 +22,7 @@ const CustomBottomRight = styled.div`
     padding-right: 0em;
     flex-direction: column;
   }
-`
+`;
 
 const ButtonPill = styled.div`
   border-radius: 2.4em;

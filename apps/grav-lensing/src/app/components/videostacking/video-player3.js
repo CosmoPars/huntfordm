@@ -14,7 +14,7 @@ const UseRefPlayer = () => {
 
   return (
     <>
-        <div style={{ overflow: "hidden", maxHeight: "100vh" }}>
+      <div style={{ overflow: "hidden", maxHeight: "100vh" }}>
         {/* <button 
               style={{
                   color: 'red', 

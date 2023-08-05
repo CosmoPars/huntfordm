@@ -111,9 +111,9 @@ export const MassPage = () => {
 
   const handleMassAdjust = useCallback((mass: number) => {
     if (isTablet) {
-      console.log(obstacleRadius)
+      console.log(obstacleRadius);
       setObstacleRadius(60 + mass * 20);
-      console.log(obstacleRadius)
+      console.log(obstacleRadius);
     } else {
       setObstacleRadius(60 + mass * 20);
     }
@@ -139,7 +139,9 @@ export const MassPage = () => {
   }, [obstaclePos, obstacleRadius]);
 
   useEffect(() => {
-    window.addEventListener('resize',() => {setIsTablet(window.innerWidth <= 1080)});
+    window.addEventListener("resize", () => {
+      setIsTablet(window.innerWidth <= 1080);
+    });
     setIsTablet(window.innerWidth <= 1080);
     setObstacleRadius(isTablet ? 53 : 60);
   }, []);
@@ -246,7 +248,9 @@ export const MassPage = () => {
           <NextButton onClick={handleNext} />
         </BottomRight>
       </Background>
-      <ModalDiv text={"Please open this app in full screen or landscape mode."} />
+      <ModalDiv
+        text={"Please open this app in full screen or landscape mode."}
+      />
     </>
   );
 };

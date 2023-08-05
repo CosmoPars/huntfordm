@@ -89,21 +89,24 @@ export const StackedGalaxiesLoaderPage = () => {
 
   return (
     <Background imgSrc="/assets/img/gl-bg-1.jpg">
-      <UseRefPlayer />
-      <TutorialHeader currentChapter={3} />
-      <BottomCenter width='70%'>
-      </BottomCenter>
-      <BottomRight>
-        <NextButton onClick={handleNext} />
-      </BottomRight>
-      <BottomLeft>
-        <TutorialText
-          heading={
-            "Unfortunately, galaxies come in many different shapes and sizes. So it's usually really hard to see if they've been lensed. "
-          }
+      <Background imgSrc="/assets/img/stackingstill.png">
+        <UseRefPlayer />
+        <TutorialHeader currentChapter={3} />
+        <BottomCenter width="70%"></BottomCenter>
+        <BottomRight>
+          <NextButton onClick={handleNext} />
+        </BottomRight>
+        <BottomLeft>
+          <TutorialText
+            heading={
+              "Unfortunately, galaxies come in many different shapes and sizes. So it's usually really hard to see if they've been lensed. "
+            }
+          />
+        </BottomLeft>
+        <ModalDiv
+          text={"Please open this app in full screen or landscape mode."}
         />
-      </BottomLeft>
-      <ModalDiv text={"Please open this app in full screen or landscape mode."} />
+      </Background>
     </Background>
   );
 };

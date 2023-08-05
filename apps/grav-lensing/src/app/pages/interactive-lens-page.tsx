@@ -91,15 +91,15 @@ export const InteractiveLensPage = () => {
       />
       <TutorialHeader currentChapter={2} />
       <BottomLeft style={{ gap: "20px" }}>
-          <TutorialSlider
-            label="Obstacle Mass"
-            labelHeight={labelSize}
-            labelFontSize={labelFontSize}
-            tutorialText="Try changing the obstacle's mass"
-            onValueUpdated={handleMassAdjust}
-            initialValue={0}
-            sliderSound={ObstacleMass}
-          />
+        <TutorialSlider
+          label="Obstacle Mass"
+          labelHeight={labelSize}
+          labelFontSize={labelFontSize}
+          tutorialText="Try changing the obstacle's mass"
+          onValueUpdated={handleMassAdjust}
+          initialValue={0}
+          sliderSound={ObstacleMass}
+        />
         <TutorialText
           heading={tutorialTextHeading}
           subheading={tutorialTextSubheading}
