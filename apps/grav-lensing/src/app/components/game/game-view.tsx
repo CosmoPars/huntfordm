@@ -65,7 +65,7 @@ const GameViewContainer = styled.div`
 const GameGridContainer = styled.div`
   margin: auto;
   margin-top: 70px;
-  width: 133vh;
+  width: 100vw;
   height: calc(100% - 101px);
 `;
 

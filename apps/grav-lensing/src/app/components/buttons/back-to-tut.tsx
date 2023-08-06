@@ -19,9 +19,9 @@ const ButtonPill = styled.div`
   text-align:center;
   cursor: pointer;
   padding-left:1.1em;
-  padding-right:0.1em;
-  padding-top:0.1em;
-  padding-bottom:0.1em;
+  padding-right:0.4em;
+  padding-top:0.4em;
+  padding-bottom:0.4em;
   color: white;
   font-weight: 600;
   margin: 20px;

@@ -16,6 +16,8 @@ type modalProp = {
 };
 const ModalOverlay = styled.div`
   position: fixed;
+  width: 100vw;
+  height: 100vh;
   top: 0;
   left: 0;
   bottom: 0;
@@ -28,7 +30,7 @@ const ModelHeader = styled.div`
   top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  width: 70%;
   padding: 25px;
   zindex: 1000;
   color: white;
@@ -42,7 +44,6 @@ const ModelHeader2 = styled.div`
   top: 31%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
   padding: 25px;
   zindex: 1000;
   color: white;
@@ -54,7 +55,6 @@ const ModalDiv = styled.div`
   position: fixed;
   top: 50%;
   left: 50%;
-  width: 200px;
   transform: translate(-50%, -50%);
   background: #000;
   padding: 25px;
@@ -71,7 +71,7 @@ const ModalFooter = styled.div`
   position: fixed;
   top: 75%;
   left: 50%;
-  width: 1200px;
+  width: 70%;
   transform: translate(-50%, -50%);
   zindex: 1000;
   justify-content: center;
@@ -82,7 +82,6 @@ const FooterText = styled.div`
   position: fixed;
   top: 60%;
   left: 50%;
-  width: 700px;
   padding-top: 80px;
   transform: translate(-50%, -50%);
   zindex: 1000;

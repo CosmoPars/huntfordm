@@ -11,7 +11,7 @@ export interface URLButtonProps {
 const ButtonPill = styled.div`
   border-radius: 3em;
   height: 2.5em;
-
+  width: 200px;
   background-color: #000A;
   font-size: 25px;
   display: flex;
@@ -21,7 +21,7 @@ const ButtonPill = styled.div`
   align-items: center;
   text-align:center;
   cursor: pointer;
-  padding: 0.1em 0.75em;
+  padding: 0.4em 0.9em;
   padding-left:1.5em;
   color: white;
   font-weight: 600;
@@ -54,7 +54,7 @@ export const URLButton = ({ onClick }: URLButtonProps) => {
 
   return (
     <ButtonPill onClick={handleClick}>
-      COPY URL FOR THIS UNIVERSE
+      COPY URL
       <ButtonLink style={{ height: "1em", paddingLeft: "0.5em" }} />
     </ButtonPill>
   );
