@@ -6,7 +6,7 @@ import { ClickSound } from "../../components/audio/sound";
 import styled from "@emotion/styled";
 
 const VideoPlayer = styled.video`
-  width: 100vw;
+  max-width: 100vw;
 `;
 
 const UseRefPlayer = () => {
@@ -28,7 +28,14 @@ const UseRefPlayer = () => {
 
   return (
     <>
-      <div style={{ overflow: "hidden", maxHeight: "100vh" }}>
+      <div
+        style={{
+          overflow: "hidden",
+          maxHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
         <button
           style={{
             color: "red",
