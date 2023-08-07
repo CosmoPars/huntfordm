@@ -1,9 +1,9 @@
 module.exports = {
-  displayName: 'gravitational-lensing-simulation',
-  preset: '../../jest.preset.js',
+  displayName: "gravitational-lensing-simulation",
+  preset: "../../jest.preset.js",
   transform: {
-    '^.+\\.[tj]sx?$': 'babel-jest',
+    "^.+\\.[tj]sx?$": "babel-jest",
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/gravitational-lensing-simulation',
-}
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  coverageDirectory: "../../coverage/libs/gravitational-lensing-simulation",
+};

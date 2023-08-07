@@ -1,8 +1,8 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export type BackgroundProps = {
-  imgSrc: string
-}
+  imgSrc: string;
+};
 
 export const Background = styled.div<BackgroundProps>`
   position: absolute;
@@ -12,7 +12,7 @@ export const Background = styled.div<BackgroundProps>`
   height: 100%;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('${props => props.imgSrc}');
+  background-image: url("${(props) => props.imgSrc}");
   background-position: center;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -20,4 +20,4 @@ export const Background = styled.div<BackgroundProps>`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-`
+`;

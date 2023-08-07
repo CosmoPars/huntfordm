@@ -1,5 +1,5 @@
 const isMobileDevice = (): boolean => {
-    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
+  return window.innerWidth < 810;
 };
 
 export default isMobileDevice;

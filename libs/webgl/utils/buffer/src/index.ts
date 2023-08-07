@@ -1,1 +1,1 @@
-export * from './lib/webgl-utils-buffer'
+export * from "./lib/webgl-utils-buffer";

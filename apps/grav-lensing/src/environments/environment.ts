@@ -3,5 +3,5 @@
 
 export const environment = {
   production: false,
-  amplitudeApiKey: ''
-}
+  amplitudeApiKey: "",
+};

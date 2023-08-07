@@ -1,9 +1,12 @@
 import React, { useCallback, useRef } from "react";
+import styled from "@emotion/styled";
 
-
+const VideoPlayer = styled.video`
+  max-width: 100vw;
+`;
 
 const UseRefPlayer = () => {
-  const videoRef1 = useRef();
+  const videoRef = useRef();
 
   const handlePlay = () => {
     videoRef1.current.play();
@@ -11,8 +14,15 @@ const UseRefPlayer = () => {
 
   return (
     <>
-      <div>
-            {/* <button 
+      <div
+        style={{
+          overflow: "hidden",
+          maxHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
+        {/* <button 
               style={{
                   color: 'red', 
                   position: "fixed", 
@@ -33,9 +43,9 @@ const UseRefPlayer = () => {
               onClick={handlePlay}>
               Stack the Rest
             </button> */}
-      <video id="myVideo" autoPlay playsInline ref={videoRef1} style={{ position: "fixed", top:'0', left:'0', width:'100%', height:'100vh', objectFit: "cover" }}>
+        <VideoPlayer id="myVideo" autoPlay playsInline ref={videoRef}>
           <source src="../../assets/video/Third.mp4" type="video/mp4" />
-      </video>
+        </VideoPlayer>
       </div>
     </>
   );

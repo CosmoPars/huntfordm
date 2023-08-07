@@ -1,9 +1,9 @@
-import { ReactComponent as ButtonArrow } from '../svg/gl-circle-arrow-replay.svg'
-import styled from "@emotion/styled"
+import { ReactComponent as ButtonArrow } from "../svg/gl-circle-arrow-replay.svg";
+import styled from "@emotion/styled";
 
 export type PrimaryButtonProps = {
-  onClick?: () => void
-}
+  onClick?: () => void;
+};
 
 const ButtonPill = styled.div`
   border-radius: 3em;
@@ -18,7 +18,7 @@ const ButtonPill = styled.div`
   align-items: center;
   text-align:center;
   cursor: pointer;
-  padding: 0.1em 0.75em;
+  padding: 0.4em 0.9em;
   padding-left:1.5em;
   color: white;
   font-weight: 600;
@@ -27,17 +27,15 @@ const ButtonPill = styled.div`
   &:hover {
     box-shadow: 0 0 10px;
   }
-`
+`;
 
-export const  ReplayButton = ({
-  onClick,
-}: PrimaryButtonProps) => {
+export const ReplayButton = ({ onClick }: PrimaryButtonProps) => {
   return (
     <ButtonPill onClick={onClick}>
       PLAY AGAIN
-      <ButtonArrow style={{height: '1em', paddingLeft: '0.5em'}} />
+      <ButtonArrow style={{ height: "1em", paddingLeft: "0.5em" }} />
     </ButtonPill>
-  )
-}
+  );
+};
 
-export default ReplayButton
+export default ReplayButton;

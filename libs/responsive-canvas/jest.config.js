@@ -1,9 +1,9 @@
 module.exports = {
-  displayName: 'responsive-canvas',
-  preset: '../../jest.preset.js',
+  displayName: "responsive-canvas",
+  preset: "../../jest.preset.js",
   transform: {
-    '^.+\\.[tj]sx?$': 'babel-jest',
+    "^.+\\.[tj]sx?$": "babel-jest",
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-  coverageDirectory: '../../coverage/libs/responsive-canvas',
-}
+  moduleFileExtensions: ["ts", "tsx", "js", "jsx"],
+  coverageDirectory: "../../coverage/libs/responsive-canvas",
+};

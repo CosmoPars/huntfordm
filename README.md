@@ -1,4 +1,5 @@
 # The Hunt for Dark Matter
+
 An interactive game based on using gravitational lensing to look for dark matter
 
 ## Getting Started
@@ -11,9 +12,10 @@ PRs are welcomed, and will be reviewed.
 
 ## Project Structure
 
-This project is front-end only and built entirely in React.  Styling is done using `emotion`, and routing done using `react-router`.  The majority of code is in the `apps/grav-lensing/app` folder. Within this folder there a few useful starting points.
+This project is front-end only and built entirely in React. Styling is done using `emotion`, and routing done using `react-router`. The majority of code is in the `apps/grav-lensing/app` folder. Within this folder there a few useful starting points.
 
 ### Top Level Configuration
+
 Common configurations are stored directly in the `config.ts` file. This includes things like the images used for Galaxy Stacking, and Tutorial Chapter markers.
 
 Routes can be configured in `routes.ts` file.

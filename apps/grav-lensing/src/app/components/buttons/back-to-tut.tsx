@@ -1,9 +1,9 @@
-import { ReactComponent as ButtonArrow } from '../svg/gl-circle-arrow-back.svg'
-import styled from "@emotion/styled"
+import { ReactComponent as ButtonArrow } from "../svg/gl-circle-arrow-back.svg";
+import styled from "@emotion/styled";
 
 export type PrimaryButtonProps = {
-  onClick?: () => void
-}
+  onClick?: () => void;
+};
 
 const ButtonPill = styled.div`
   border-radius: 3em;
@@ -19,9 +19,9 @@ const ButtonPill = styled.div`
   text-align:center;
   cursor: pointer;
   padding-left:1.1em;
-  padding-right:0.1em;
-  padding-top:0.1em;
-  padding-bottom:0.1em;
+  padding-right:0.4em;
+  padding-top:0.4em;
+  padding-bottom:0.4em;
   color: white;
   font-weight: 600;
   margin: 20px;
@@ -29,17 +29,15 @@ const ButtonPill = styled.div`
   &:hover {
     box-shadow: 0 0 10px;
   }
-`
+`;
 
-export const  BackButton = ({
-  onClick,
-}: PrimaryButtonProps) => {
+export const BackButton = ({ onClick }: PrimaryButtonProps) => {
   return (
     <ButtonPill onClick={onClick}>
-      <ButtonArrow style={{height: '1em', paddingRight: '0.5em'}} />
+      <ButtonArrow style={{ height: "1em", paddingRight: "0.5em" }} />
       BACK TO TUTORIAL
     </ButtonPill>
-  )
-}
+  );
+};
 
-export default BackButton
+export default BackButton;

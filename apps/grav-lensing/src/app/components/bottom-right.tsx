@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const BottomRight = styled.div`
   position: absolute;
@@ -14,4 +14,11 @@ export const BottomRight = styled.div`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-`
+  @media (max-width: 1360px) {
+    width: 25%;
+    scale: 0.7;
+    padding-bottom: 2em;
+    padding-right: 2em;
+    flex-direction: column;
+  }
+`;

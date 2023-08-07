@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 export const TopRight = styled.div`
   position: absolute;
@@ -14,4 +14,4 @@ export const TopRight = styled.div`
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-`
+`;
