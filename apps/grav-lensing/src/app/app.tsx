@@ -1,5 +1,5 @@
 import styled from '@emotion/styled'
-import { Route, Switch } from 'react-router-dom'
+import { Route, Routes as RouterRoutes } from 'react-router-dom'
 import { DarkMatterPage } from './pages/dark-matter-page'
 import { DirectPage } from './pages/direct-page'
 import { InteractiveLensPage } from './pages/interactive-lens-page'
@@ -79,27 +79,27 @@ export function App() {
     <StyledApp>
       <ImagePreloader images={preloadImages}>
         <AmbientProvider defaultCrossfadeDuration={1500} ambientVolume={0.10}>
-          <Switch>
-            <Route path='/title' component={TitlePage} />
-            <Route path='/tutorial/star' component={StarPage} />
-            <Route path='/tutorial/direct' component={DirectPage} />
-            <Route path='/tutorial/obstacle' component={ObstaclePage} />
-            <Route path='/tutorial/mass' component={MassPage} />
-            <Route path='/tutorial/darkmatter' component={DarkMatterPage} />
-            <Route path='/tutorial/newdarkmatter' component={NewDarkMatterPage } />
-            <Route path='/tutorial/interactivelens' component={InteractiveLensPage} />
-            <Route path='/tutorial/slrare' component={SLRarePage} />
-            {/* <Route path='/tutorial/strangegalaxies' component={StrangeGalaxiesPage} /> // page no longer used */}
-            <Route path={`${Routes.Game}/:level`} component={Game} /> 
-            <Route path='/tutorial/stackedgalaxiesLoader' component={StackedGalaxiesLoaderPage} />
-            {/* <Route path='/tutorial/stackedgalaxies' component={StackedGalaxiesPage} /> //page no longer used */}
-            <Route path='/tutorial/stackedgalaxies1' component={StackedGalaxiesPage1} />
-            <Route path='/tutorial/stackedgalaxies2' component={StackedGalaxiesPage2} />
-            <Route path='/tutorial/stackedgalaxies3' component={StackedGalaxiesPage3} />
-            <Route path={Routes.Game} component={GameStartPage} />
-            <Route path='/tutorial/ending' component={EndOfTutPage} />
-            <Route path='/' component={TitlePage} />
-          </Switch>
+          <RouterRoutes>
+            <Route path='/title' element={<TitlePage />} />
+            <Route path='/tutorial/star' element={<StarPage />} />
+            <Route path='/tutorial/direct' element={<DirectPage />} />
+            <Route path='/tutorial/obstacle' element={<ObstaclePage />} />
+            <Route path='/tutorial/mass' element={<MassPage />} />
+            <Route path='/tutorial/darkmatter' element={<DarkMatterPage />} />
+            <Route path='/tutorial/newdarkmatter' element={<NewDarkMatterPage />} />
+            <Route path='/tutorial/interactivelens' element={<InteractiveLensPage />} />
+            <Route path='/tutorial/slrare' element={<SLRarePage />} />
+            {/* <Route path='/tutorial/strangegalaxies' element={<StrangeGalaxiesPage />} /> // page no longer used */}
+            <Route path={`${Routes.Game}/:level`} element={<Game />} />
+            <Route path='/tutorial/stackedgalaxiesLoader' element={<StackedGalaxiesLoaderPage />} />
+            {/* <Route path='/tutorial/stackedgalaxies' element={<StackedGalaxiesPage />} /> //page no longer used */}
+            <Route path='/tutorial/stackedgalaxies1' element={<StackedGalaxiesPage1 />} />
+            <Route path='/tutorial/stackedgalaxies2' element={<StackedGalaxiesPage2 />} />
+            <Route path='/tutorial/stackedgalaxies3' element={<StackedGalaxiesPage3 />} />
+            <Route path={Routes.Game} element={<GameStartPage />} />
+            <Route path='/tutorial/ending' element={<EndOfTutPage />} />
+            <Route path='/' element={<TitlePage />} />
+          </RouterRoutes>
         </AmbientProvider>
       </ImagePreloader>
     </StyledApp>

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { Fragment } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 export type ProgressBarProps = {
   steps: string[]
@@ -37,16 +37,16 @@ export const ProgressBar = ({
   currentStep
 }: ProgressBarProps) => {
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   return (
     <BarContainer>
       {steps.map((link, index) => {
         if (index === steps.length - 1) {
-          return <StepIndicator key={link} color={link === currentStep ? 'white' : 'clear'} onClick={() => history.push(link)} />
+          return <StepIndicator key={link} color={link === currentStep ? 'white' : 'clear'} onClick={() => navigate(link)} />
         } else {
           return <Fragment key={link}>
-            <StepIndicator color={link === currentStep ? 'white' : 'clear'} onClick={() => history.push(link)} />
+            <StepIndicator color={link === currentStep ? 'white' : 'clear'} onClick={() => navigate(link)} />
             <StepSeparator />
           </Fragment>
         }

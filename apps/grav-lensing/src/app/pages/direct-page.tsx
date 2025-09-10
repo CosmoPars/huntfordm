@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
 import { Earth } from "../components/earth"
@@ -19,13 +19,13 @@ import { useAmbientFn } from "../components/audio/ambient-context"
 const lineRotations = [45, 90, 135, 180, 225, 270, 315]
 const galaxyPos: [string, string] = ['20%', '50%']
 export const DirectPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Direct Light'})
-    history.push('/tutorial/obstacle')
+    navigate('/tutorial/obstacle')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 

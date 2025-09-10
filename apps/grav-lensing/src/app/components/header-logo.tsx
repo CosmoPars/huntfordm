@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { useCallback } from "react"
 
 const HeaderLogoImage = styled.img`
@@ -7,11 +7,11 @@ const HeaderLogoImage = styled.img`
 `
 
 export const HeaderLogo = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleClick = useCallback(() => {
-    history.push('/tutorial')
-  }, [history])
+    navigate('/tutorial')
+  }, [navigate])
   return (
     <div onClick = {handleClick} style={{cursor:'pointer',zIndex:1000}}>
     <HeaderLogoImage src='/assets/img/header-logo.png' alt='The hunt for dark matter' draggable = 'false'/>

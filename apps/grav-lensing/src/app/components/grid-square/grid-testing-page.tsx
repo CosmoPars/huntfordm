@@ -2,11 +2,11 @@ import { Background } from "../background"
 import { TopLeft } from "../top-left"
 import { HeaderLogo } from "../header-logo"
 import GameView from "../game/game-view"
-import {RouteComponentProps } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
-export const GridPage = (props: RouteComponentProps<{ level: string }>) => {
-    console.log(props.match.params.level)
-    const difficulty = props.match.params.level;
+export const GridPage = () => {
+    const { level: difficulty } = useParams<{ level: string }>()
+    console.log(difficulty)
     if(difficulty==='easy'){
         return(<Background imgSrc='/assets/img/gl-bg-1.jpg'>
         <TopLeft>
@@ -34,5 +34,3 @@ export const GridPage = (props: RouteComponentProps<{ level: string }>) => {
     }
     return(<div/>);
 }
-
-

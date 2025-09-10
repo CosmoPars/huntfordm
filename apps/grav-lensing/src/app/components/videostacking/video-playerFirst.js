@@ -1,7 +1,7 @@
 import React, { useCallback, useRef } from "react";
 import PrimaryButton from "../buttons/primary-button";
 import amplitude from 'amplitude-js';
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ClickSound } from "../../components/audio/sound"
 
 
@@ -12,27 +12,27 @@ const UseRefPlayer = () => {
     videoRef.current.play();
   };
 
-    const history = useHistory ()
+    const navigate = useNavigate ()
 
 
     const handleNext = useCallback (() => {
         amplitude.getInstance().logEvent('Click on Stack Button',{'CurrentPage':'Stacked Galaxies 0'})
-        history.push('/tutorial/stackedgalaxies1')
+        navigate('/tutorial/stackedgalaxies1')
         ClickSound.play()
-      }, [history])
+      }, [navigate])
 
   return (
     <>
       <div>
-          
+
           {/* <div id="box" style={{visibility:"hidden"}}> */}
-            <button 
-              
+            <button
+
               style={{
-                  color: 'red', 
-                  position: "absolute", 
-                  top:'63%', 
-                  left:'57%', 
+                  color: 'red',
+                  position: "absolute",
+                  top:'63%',
+                  left:'57%',
                   zIndex:'150',
                   borderRadius: '3em',
                   height: '2.2rem',
@@ -43,17 +43,17 @@ const UseRefPlayer = () => {
                   fontWeight: '600',
                   justifyContent: 'center',
                   color: 'black',
-                  backgroundColor: '#FFFA', 
+                  backgroundColor: '#FFFA',
                    visibility: "hidden",
-                  
-                }} 
+
+                }}
 
               onClick={handleNext}>
               Start Stack
             </button>
             {/* </div> */}
       <video id="myVideo" autoPlay playsInline ref={videoRef} style={{ position: "fixed", top:'0', left:'0', width:'100%', height:'100vh', objectFit: "cover" }}>
-          <source src="/assets/video/Zeroth.mp4" type="video/mp4" />    
+          <source src="/assets/video/Zeroth.mp4" type="video/mp4" />
       </video>
       </div>
     </>

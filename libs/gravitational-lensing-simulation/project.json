@@ -5,15 +5,20 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/rollup:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/gravitational-lensing-simulation",
         "tsConfig": "libs/gravitational-lensing-simulation/tsconfig.lib.json",
         "project": "libs/gravitational-lensing-simulation/package.json",
         "entryFile": "libs/gravitational-lensing-simulation/src/index.ts",
-        "external": ["react/jsx-runtime", "@emotion/styled/base"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "external": [
+          "react/jsx-runtime",
+          "@emotion/styled/base"
+        ],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "assets": [
           {
             "glob": "libs/gravitational-lensing-simulation/README.md",
@@ -24,8 +29,10 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
         "lintFilePatterns": [
           "libs/gravitational-lensing-simulation/**/*.{ts,tsx,js,jsx}"
@@ -33,12 +40,15 @@
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/gravitational-lensing-simulation"],
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "coverage/libs/gravitational-lensing-simulation"
+      ],
       "options": {
         "jestConfig": "libs/gravitational-lensing-simulation/jest.config.js",
         "passWithNoTests": true
       }
     }
-  }
+  },
+  "name": "gravitational-lensing-simulation"
 }

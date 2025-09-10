@@ -1,28 +1,10 @@
 {
-  "npmScope": "web",
-  "affected": {
-    "defaultBase": "master"
-  },
   "implicitDependencies": {
     "package.json": {
       "dependencies": "*",
       "devDependencies": "*"
     },
     ".eslintrc.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
-        "parallel": 1
-      }
-    }
   },
   "targetDependencies": {
     "build": [
@@ -32,11 +14,8 @@
       }
     ]
   },
-  "cli": {
-    "defaultCollection": "@nrwl/react"
-  },
   "generators": {
-    "@nrwl/react": {
+    "@nx/react": {
       "application": {
         "style": "@emotion/styled",
         "linter": "eslint",
@@ -51,5 +30,22 @@
       }
     }
   },
-  "defaultProject": "grav-lensing"
+  "defaultProject": "grav-lensing",
+  "parallel": 1,
+  "targetDefaults": {
+    "build": {
+      "cache": true
+    },
+    "lint": {
+      "cache": true
+    },
+    "test": {
+      "cache": true
+    },
+    "e2e": {
+      "cache": true
+    }
+  },
+  "useInferencePlugins": false,
+  "defaultBase": "master"
 }

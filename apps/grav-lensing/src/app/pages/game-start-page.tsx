@@ -1,5 +1,5 @@
 import { useCallback } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TopLeft } from "../components/top-left"
@@ -54,25 +54,25 @@ const ContainerDiv = styled.div`
 `
 
 export const GameStartPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleEasy = useCallback(() => {
     ClickSound.play()
     amplitude.getInstance().logEvent('Click to play',{'gameLevel':'Easy'})
-    history.push(`${Routes.Game}/easy`)
-  }, [history])
+    navigate(`${Routes.Game}/easy`)
+  }, [navigate])
 
   const handleMedium = useCallback(() => {
     ClickSound.play()
     amplitude.getInstance().logEvent('Click to play',{'gameLevel':'Medium'})
-    history.push(`${Routes.Game}/medium`)
-  }, [history])
+    navigate(`${Routes.Game}/medium`)
+  }, [navigate])
 
   const handleHard = useCallback(() => {
     ClickSound.play()
     amplitude.getInstance().logEvent('Click to play',{'gameLevel':'Hard'})
-    history.push(`${Routes.Game}/hard`)
-  }, [history])
+    navigate(`${Routes.Game}/hard`)
+  }, [navigate])
 
   return (
     <Background imgSrc='/assets/img/star-background.jpg'>
@@ -88,7 +88,7 @@ export const GameStartPage = () => {
 
         </StyledText>
 
-        <Text>You start with $50,000 worth of funding and every scan costs you some funds. 
+        <Text>You start with $50,000 worth of funding and every scan costs you some funds.
           <br/> When you scan a square with a clump of dark matter in it you win some funding back.
           </Text>
 

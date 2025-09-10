@@ -5,15 +5,20 @@
   "tags": [],
   "targets": {
     "build": {
-      "executor": "@nrwl/web:rollup",
-      "outputs": ["{options.outputPath}"],
+      "executor": "@nx/rollup:rollup",
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/libs/responsive-canvas",
         "tsConfig": "libs/responsive-canvas/tsconfig.lib.json",
         "project": "libs/responsive-canvas/package.json",
         "entryFile": "libs/responsive-canvas/src/index.ts",
-        "external": ["react/jsx-runtime", "@emotion/styled/base"],
-        "rollupConfig": "@nrwl/react/plugins/bundle-rollup",
+        "external": [
+          "react/jsx-runtime",
+          "@emotion/styled/base"
+        ],
+        "rollupConfig": "@nx/react/plugins/bundle-rollup",
         "assets": [
           {
             "glob": "libs/responsive-canvas/README.md",
@@ -24,19 +29,26 @@
       }
     },
     "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "executor": "@nx/eslint:lint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["libs/responsive-canvas/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "libs/responsive-canvas/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/responsive-canvas"],
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "coverage/libs/responsive-canvas"
+      ],
       "options": {
         "jestConfig": "libs/responsive-canvas/jest.config.js",
         "passWithNoTests": true
       }
     }
-  }
+  },
+  "name": "responsive-canvas"
 }

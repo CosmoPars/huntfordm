@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -18,13 +18,13 @@ const StyledText =  styled.a`
 `
 
 export const NewDarkMatterPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'New Dark Matter'})
-    history.push('/tutorial/darkmatter')
+    navigate('/tutorial/darkmatter')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 
@@ -33,12 +33,12 @@ export const NewDarkMatterPage = () => {
   }, [setAmbient])
 
   return (
-    
+
       <Background imgSrc='/assets/img/gl-bg-1.jpg'>
       <TutorialHeader currentChapter={2}/>
       <CenterCenter width='70%'>
         <TutStyledText>
-          80% of the mass in the Universe is made of 
+          80% of the mass in the Universe is made of
           <br /> invisible stuff called "dark matter"
         </TutStyledText>
       </CenterCenter>

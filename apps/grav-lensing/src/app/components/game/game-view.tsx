@@ -1,5 +1,5 @@
 import {useState, useEffect, useCallback} from 'react'
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import styled from "@emotion/styled"
 import { TopRight } from "../top-right"
 import Grid from '../grid-square/grid'
@@ -73,7 +73,7 @@ export const GameView = ({cols, rows, difficulty}:GameViewProps) => {
 
   const setAmbient = useAmbientFn()
 
-  const history = useHistory()
+  const navigate = useNavigate()
   const funding = useGameFunding()
   const darkMatterRemaining = useGameDarkMatterRemaining()
   const scanGridSquare = useGameScanGridSquare()
@@ -135,14 +135,14 @@ export const GameView = ({cols, rows, difficulty}:GameViewProps) => {
     ClickSound.play()
     amplitude.getInstance().logEvent('Click on Back To Tutorial')
     setAmbient(TutorialAmbience, 3000)
-    history.push('/')
-  }, [history, setAmbient])
+    navigate('/')
+  }, [navigate, setAmbient])
 
   const handleReplay = useCallback(() => {
     ClickSound.play()
     amplitude.getInstance().logEvent('Click on Play Again')
-    history.push(Routes.Game)
-  }, [history])
+    navigate(Routes.Game)
+  }, [navigate])
 
   return(
     <GameViewContainer>

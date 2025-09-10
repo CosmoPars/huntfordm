@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
 import { CenterCenter } from "../components/center-center"
@@ -23,14 +23,14 @@ import { TutorialAmbience } from  "../components/audio/sound"
 import { useAmbientFn } from "../components/audio/ambient-context"
 
 export const SLRarePage = () => {
-  const history = useHistory()
-  
+  const navigate = useNavigate()
+
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'SL rare WL not rare'})
-    history.push('/tutorial/stackedgalaxiesLoader')
+    navigate('/tutorial/stackedgalaxiesLoader')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 
@@ -40,12 +40,12 @@ export const SLRarePage = () => {
 
 
 
-  
+
   return (
     <Background imgSrc='/assets/img/gl-bg-1.jpg'>
     <TutorialHeader currentChapter={2}/>
     <CenterCenter width='70%'>
-    <TutorialText heading={' Strong lensing that obvious is rare, but a weak lensing distortion exists almost everywhere.'} 
+    <TutorialText heading={' Strong lensing that obvious is rare, but a weak lensing distortion exists almost everywhere.'}
     subheading={'Click NEXT to zoom in on a small patch of the sky.'
   }/>
      </CenterCenter>

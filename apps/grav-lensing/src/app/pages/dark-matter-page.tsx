@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -18,13 +18,13 @@ const StyledText =  styled.a`
 `
 
 export const DarkMatterPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Dark Matter'})
-    history.push('/tutorial/interactivelens')
+    navigate('/tutorial/interactivelens')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 

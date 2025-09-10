@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -28,15 +28,15 @@ const initialMassValue = 0.025
 const massValueMultiplier = 0.05
 
 export const EndOfTutPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [lensMass, setLensMass] = useState(initialMassValue)
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'End of Tutorial'})
-    history.push('/game')
+    navigate('/game')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 
@@ -67,21 +67,21 @@ export const EndOfTutPage = () => {
 
   const handleRestack = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Restack Button',{'CurrentPage':'End of Tutorial'})
-    history.push('/tutorial/stackedgalaxiesloader')
+    navigate('/tutorial/stackedgalaxiesloader')
     ClickSound.play()
     // BeginSound.play()
 
-  }, [history])
+  }, [navigate])
 
   const [giveUpClicked, setGiveUpClicked] = useState(false);
   const handleGiveUp = useCallback(() => {
     amplitude.getInstance().logEvent('Click on ShowMe Button',{'CurrentPage':'End of Tutorial'})
     setShowModal(true)
     setHasDm(true)
-    setShowVictory(true)    
+    setShowVictory(true)
     setGiveUpClicked(true);
   }, []);
-  
+
 
   return (
     <Background imgSrc='/assets/img/gl-bg-1.jpg'>
@@ -98,12 +98,12 @@ export const EndOfTutPage = () => {
       </Magnify>
       <BottomRight>
       {/* <StackRestartButton onClick={handleRestack} /> */}
-      
+
 
     {showVictory ? (
         <NextButton children = {'FINISH'} onClick={handleNext} />
       ) : (
-        <NextButton children = {'Show me'} onClick={handleGiveUp} /> 
+        <NextButton children = {'Show me'} onClick={handleGiveUp} />
       )}
 
       </BottomRight>
@@ -123,7 +123,7 @@ export const EndOfTutPage = () => {
         {showVictory === false ?(<TutorialText heading={"We've hidden some dark matter for you."} subheading = {"At the top you can see the galaxies. At the bottom we've stacked some of them in a grid. Adjust the dark matter mass slider on the left until you think you know where the dark matter is, then click on it in the grid."}/>)
         :(<TutorialText heading={"Well done, you discovered Dark Matter!"} subheading = {"You're now ready to track down all the invisible dark matter in our virtual Universe. Good luck dark matter hunter!"}/>)
         }
-       
+
 
       </BottomLeft>
       {showVictory === false?(<StackPopUp

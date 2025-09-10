@@ -1,6 +1,6 @@
 import styled from "@emotion/styled"
 import { useCallback,useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { PrimaryButton } from "../components/buttons/primary-button"
 import { Background } from "../components/background"
 import { TopRight } from "../components/top-right"
@@ -63,13 +63,13 @@ const Logo = styled.img<LogoProps>`
 `
 
 export const TitlePage = () => {
-  
+
   const [showWarning, setShowWarning] = useState(isMobileDevice());
 
   const handleContinue = () => {
     setShowWarning(false);
   };
-  
+
   const setAmbient = useAmbientFn()
 
   //put this useEffect on other pages to continue playing if user goes back to other page
@@ -80,22 +80,22 @@ export const TitlePage = () => {
     //return() => {setAmbientInstance(null, timeoffadeout)}
   }, [setAmbient])
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleBegin = useCallback(() => {
     amplitude.getInstance().logEvent('Click On Begin')
-    history.push('/tutorial/star')
+    navigate('/tutorial/star')
     ClickSound.play()
     BeginSound.play()
 
 
-  }, [history])
+  }, [navigate])
 
   useEffect(()=>{
     amplitude.getInstance().logEvent('Lands on landing page')
   }, [])
 
-  
+
   if (showWarning) {
     return (<Background imgSrc='/assets/img/gl-bg-1.jpg'>
       <WarningMessage onContinue={handleContinue}/>

@@ -1,7 +1,7 @@
 
 import TextButton from "./text-button"
 import { ReactComponent as SkipArrows } from '../svg/gl-arrows.svg'
-import { useHistory, useLocation } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { useCallback } from "react"
 import amplitude from 'amplitude-js'
 import { Routes } from "../../routes"
@@ -11,13 +11,13 @@ type SkipProp = {
 }
 
 export const SkipButton = ({children = 'skip'}: SkipProp) => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const location = useLocation()
 
   const handleSkip = useCallback(() => {
     amplitude.getInstance().logEvent('Skip', { currentPage: location.pathname })
-    history.push(Routes.Game)
-  }, [location, history])
+    navigate(Routes.Game)
+  }, [location, navigate])
 
   return (
     <TextButton onClick={handleSkip}>

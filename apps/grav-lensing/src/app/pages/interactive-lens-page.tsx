@@ -1,5 +1,5 @@
 import { useCallback, useRef, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
@@ -31,16 +31,16 @@ const textureAspect = 8/5
 const textureScale = 0.5
 
 export const InteractiveLensPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [darkMatterPosOffset, setDarkMatterPosOffset] = useState<[number, number]>([0, 0])
   const [darkmatterMass, setDarkMatterMass] = useState<number>(0.005)
   const backgroundRef = useRef<HTMLDivElement>(null)
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Interactive Lens'})
-    history.push('/tutorial/slrare')
+    navigate('/tutorial/slrare')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 

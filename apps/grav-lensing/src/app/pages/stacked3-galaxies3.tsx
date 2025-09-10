@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -41,22 +41,22 @@ export const StackedGalaxiesPage3 = () => {
     return  <img src={DarkMatterCircleImage} style={{zIndex: 110,  width:"510px", position: "fixed", left:"35%", top: "55%" }} alt="Dark matter circle"/>;
   }
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [lensMass, setLensMass] = useState(initialMassValue)
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Stacked Galaxies3'})
-    history.push('/tutorial/ending')
+    navigate('/tutorial/ending')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const handleRestack = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Restack Button',{'CurrentPage':'Stacked Galaxies3'})
-    history.push('/tutorial/stackedgalaxiesloader')
+    navigate('/tutorial/stackedgalaxiesloader')
     ClickSound.play()
- 
-  }, [history])
+
+  }, [navigate])
 
   const [firstChange, setFirstChange] = useState(false)
   const handleMassAdjust = useCallback((val: number) => {
@@ -81,13 +81,13 @@ export const StackedGalaxiesPage3 = () => {
       <BottomCenter width='70%'>
       </BottomCenter>
       <BottomRight>
-        <StackRestartButton onClick={handleRestack} /> 
+        <StackRestartButton onClick={handleRestack} />
         <NextButton onClick={handleNext} />
        </BottomRight>
       <BottomLeft>
         <TutorialText heading={'The stacked images reveal something new. Some hidden dark matter!'} subheading={'Galaxy images are squashed in the direction of a lens and stretched crosswise. Without lensing, the stacks would just be circles.'}/>
        </BottomLeft>
     </Background>
-    
+
   )
 }

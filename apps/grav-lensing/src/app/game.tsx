@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 import { useEffect, useState } from "react"
-import { RouteComponentProps } from "react-router-dom"
+import { useLocation, useParams } from "react-router-dom"
 import { Background } from "./components/background"
 import { GameManager, GameManagerProps } from "./components/game/game-manager"
 import GameView from "./components/game/game-view"
@@ -16,7 +16,7 @@ const defaultProps: Omit<GameManagerProps, 'children' | 'defaultGridSize'> = {
   foundDarkMatterReward: 10000
 }
 
-export const Game = (props: RouteComponentProps<{ level: string }>) => {
+export const Game = () => {
   const [gridSize, setGridSize] = useState<[number, number]>([5, 5])
   const [darkMatterCount, setDarkMatterCount] = useState<number>(defaultProps.defaultDarkMatterCount)
   const [darkMatterMassRange, setDarkMatterMassRange] = useState<[number, number]>(defaultProps.defaultDarkMatterMassRange)
@@ -24,7 +24,8 @@ export const Game = (props: RouteComponentProps<{ level: string }>) => {
   const [initialFunding, setInitialFunding] = useState<number>(defaultProps.initialFunding)
   const [scanCost, setScanCost] = useState<number>(defaultProps.scanCost)
   const [foundDarkmatterReward, setFoundDarkMatterReward] = useState<number>(defaultProps.foundDarkMatterReward)
-  const level = props.match.params.level
+  const { level = 'easy' } = useParams<{ level: string }>()
+  const location = useLocation()
 
   const setCustomGame = useCallback((gameDataJson: string): boolean => {
     const gameData = JSON.parse(gameDataJson)
@@ -46,7 +47,7 @@ export const Game = (props: RouteComponentProps<{ level: string }>) => {
 
   useEffect(() => {
     if (level === 'custom') {
-      const data = new URLSearchParams(props.location.search)
+      const data = new URLSearchParams(location.search)
       const gameDataEncoded = data.get('game')
       if (gameDataEncoded) {
         const gameData = atob(gameDataEncoded)
@@ -66,7 +67,9 @@ export const Game = (props: RouteComponentProps<{ level: string }>) => {
       setDarkMatterMassRange([0.6, 0.75])
       setScanCost(2500)
     }
-  }, [level, setCustomGame, props.location.search])
+
+
+  }, [level, setCustomGame, location.search])
 
   return (
     <Background imgSrc='/assets/img/star-background.jpg'>

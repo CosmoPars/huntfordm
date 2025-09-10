@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -29,7 +29,7 @@ const initialMassValue = 0.05
 const massValueMultiplier = 0.05
 
 export const StackedGalaxiesPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [lensMass, setLensMass] = useState(initialMassValue)
 
@@ -43,9 +43,9 @@ export const StackedGalaxiesPage = () => {
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Stacked Galaxies'})
-    history.push('/tutorial/stackedgalaxies1')
+    navigate('/tutorial/stackedgalaxies1')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
   const [firstChange, setFirstChange] = useState(false)
   const handleMassAdjust = useCallback((val: number) => {
     setLensMass((val + 0.5) * massValueMultiplier)

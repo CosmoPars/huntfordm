@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -42,17 +42,17 @@ export const StackedGalaxiesPage2 = () => {
   }
 
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [lensMass, setLensMass] = useState(initialMassValue)
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Stacked Galaxies 2'})
-    history.push('/tutorial/stackedgalaxies3')
+    navigate('/tutorial/stackedgalaxies3')
     ClickSound.play()
     BeginSound.play()
 
-  }, [history])
+  }, [navigate])
   const [firstChange, setFirstChange] = useState(false)
   const handleMassAdjust = useCallback((val: number) => {
     setLensMass((val + 0.5) * massValueMultiplier)
@@ -81,6 +81,6 @@ export const StackedGalaxiesPage2 = () => {
         <TutorialText heading={'The intrinsic galaxy shapes "average out", but the lensing effect doesn\'t.'}/>
       </BottomLeft>
     </Background>
-    
+
   )
 }

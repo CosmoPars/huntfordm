@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
 import { Earth } from "../components/earth"
@@ -27,16 +27,16 @@ const obstacleMovementWidth = 350
 const obstacleRadius = 50
 
 export const ObstaclePage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
   const [obstaclePos, setObstaclePos] = useState<number>(0)
   const [lineLength, setLineLength] = useState('50%')
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Obstacle Blocks Light'})
-    history.push('/tutorial/mass')
+    navigate('/tutorial/mass')
     ClickSound.play()
     MoveObstacle.stop()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 

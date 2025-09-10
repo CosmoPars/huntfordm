@@ -1,5 +1,5 @@
 import { useCallback, useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomRight } from "../components/bottom-right"
 import { Background } from "../components/background"
 import { TutorialHeader } from "../components/tutorial-header"
@@ -44,7 +44,7 @@ export const StackedGalaxiesLoaderPage = () => {
   }
 
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [lensMass, setLensMass] = useState(initialMassValue)
 
@@ -58,10 +58,10 @@ export const StackedGalaxiesLoaderPage = () => {
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Stacked Galaxies 0'})
-    history.push('/tutorial/stackedgalaxies1')
+    navigate('/tutorial/stackedgalaxies1')
     ClickSound.play()
     BeginSound.play()
-  }, [history])
+  }, [navigate])
   const [firstChange, setFirstChange] = useState(false)
   const handleMassAdjust = useCallback((val: number) => {
     setLensMass((val + 0.5) * massValueMultiplier)
@@ -91,6 +91,6 @@ export const StackedGalaxiesLoaderPage = () => {
         <TutorialText heading={'Unfortunately, galaxies come in many different shapes and sizes. So it\'s usually really hard to see if they\'ve been lensed. '}/>
       </BottomLeft>
     </Background>
-    
+
   )
 }

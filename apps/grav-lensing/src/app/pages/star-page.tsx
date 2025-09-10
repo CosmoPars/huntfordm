@@ -1,5 +1,5 @@
 import { useCallback, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import { BottomLeft } from "../components/bottom-left"
 import { BottomRight } from "../components/bottom-right"
 import { Galaxy } from "../components/galaxy"
@@ -16,13 +16,13 @@ import { TutorialAmbience } from  "../components/audio/sound"
 import { useAmbientFn } from "../components/audio/ambient-context"
 
 export const StarPage = () => {
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const handleNext = useCallback(() => {
     amplitude.getInstance().logEvent('Click on Next Button',{'CurrentPage':'Star'})
-    history.push('/tutorial/direct')
+    navigate('/tutorial/direct')
     ClickSound.play()
-  }, [history])
+  }, [navigate])
 
   const setAmbient = useAmbientFn()
 
